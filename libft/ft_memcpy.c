@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 17:02:00 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/09 17:19:23 by tmarina-         ###   ########.fr       */
+/*   Updated: 2022/12/26 21:09:54 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*des;
 
 	if (dest == NULL && src == NULL)
-	{
 		return (NULL);
-	}
 	x = 0;
 	sr = src;
 	des = dest;

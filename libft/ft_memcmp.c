@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 15:10:15 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/22 17:51:48 by tmarina-         ###   ########.fr       */
+/*   Created: 2022/12/16 20:08:12 by tmarina-          #+#    #+#             */
+/*   Updated: 2022/12/26 19:55:34 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    while (*s)
-    {
-        if (*s == (char) c)
-        {
-            return ((char *)s);
-        }
-        s++;
-    }
-    if (*s == (char) c)
-    {
-        return ((char *)s);
-    }
-    return (0);
+	size_t				pos;
+	unsigned const char	*str1;
+	unsigned const char	*str2;
+
+	pos = 0;
+	str1 = s1;
+	str2 = s2;
+	while (pos < n)
+	{
+		if (str1[pos] != str2[pos])
+		{
+			return (str1[pos] - str2[pos]);
+		}
+		pos++;
+	}
+	return (0);
 }
 /*
+#include <stdio.h>
 int main ()
 {
-    const   char s[]  = "http://www.tutorialspoint.com";
-    const   char c    = '.';
-    char *ret;
-
-   ret = ft_strchr(s, c);
-
-   printf("String after |%c| is - |%s|\n", c, ret);
-   
-   return(0);
+printf ("%d\n", ft_memcmp("luz", "luz", 2));
+return(0);
 }*/

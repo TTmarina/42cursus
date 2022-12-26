@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:02:22 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/05 19:28:30 by tmarina-         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:43:40 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ size_t ft_strlcpy(char *dst, const char *src, size_t n)
     dst[x] = '\0';
     return(count);
 }
-/* int main()
+/*
+int main()
 {
    char dst[20] = "viaje viejo";
    const char src[20]  = "viaje nuevo";
@@ -41,4 +42,4 @@ size_t ft_strlcpy(char *dst, const char *src, size_t n)
    printf("After strlcpy dst = %s, src = %s\n", dst, src);
 
    return(0);
-} */
+}*/

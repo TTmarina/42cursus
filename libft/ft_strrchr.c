@@ -6,30 +6,30 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 11:49:20 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/16 17:52:48 by tmarina-         ###   ########.fr       */
+/*   Updated: 2022/12/28 14:39:16 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int count;
-    
-    count = 0;
-    while (s[count])
-    {
-        count++;
-    }
-    while (count >= 0)
-    {
-        if(s[count] == (char) c)
-        {
-            return ((char*)s + count);
-        }
-        count--;
-    }
-    return (NULL);
+	int	count;
+
+	count = 0;
+	while (s[count])
+	{
+		count++;
+	}
+	while (count >= 0)
+	{
+		if (s[count] == (char) c)
+		{
+			return ((char *)s + count);
+		}
+		count--;
+	}
+	return (NULL);
 }
 /*
 #include <stdio.h>

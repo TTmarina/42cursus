@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 15:55:53 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/26 19:52:43 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/02 13:51:10 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_atoi(const char *str)
 int main ()
 {
     printf("%d\n", ft_atoi("+12d"));
-    printf("%d", atoi("  12a23"));
+    printf("%d", ft_atoi("  12a23"));
     return (0);
 }
  */

@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 15:02:51 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/29 16:28:17 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/02 18:38:02 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *litlle, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(const char *s1, const char *s2);
+
 
 #endif

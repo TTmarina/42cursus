@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 17:28:58 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/29 16:32:08 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/02 15:19:58 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (0);
-  if (ft_strlen(s) < start)
-    return (ft_strdup(""));
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
 	src = (char *)s + start;
 	len_src = ft_strlen(src);
 	if (len_src < len)

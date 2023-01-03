@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 15:55:09 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/03 15:44:45 by tmarina-         ###   ########.fr       */
+/*   Created: 2023/01/03 16:29:02 by tmarina-          #+#    #+#             */
+/*   Updated: 2023/01/03 17:44:27 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strjoin(const char *s1, const char *s2)
+void    ft_putnbr_fd(int n, int fd)
 {
-    char *str;
-    size_t pos;
-
-    pos = 0;
-    int len = ft_strlen(s1) + ft_strlen(s2) + 1;
-    str = (char*) malloc(len * sizeof(char));
-    
-    if (str == NULL)
+    if (n == -2147483648)
     {
-        return (NULL);
+        ft_putchar_fd('-', fd);
+        ft_putchar_fd('2', fd);
+        ft_putnbr_fd(147483648, fd);
     }
-    while (*s1)
+    else if (n < 0)
     {
-        str[pos] = *s1++;
-        pos++;
+        ft_putchar_fd('-', fd);
+        ft_putnbr_fd(n * (-1), fd);
     }
-    while(*s2)
+    else if (n >= 0 && n < 10)
     {
-        str[pos] = *s2++;
-        pos++;
+       ft_putchar_fd(n + '0', fd); 
     }
-    str[pos] = '\0';
-    return (str);
+    else
+    {
+        ft_putnbr_fd((n / 10), fd);
+        ft_putchar_fd((n % 10 + '0'), fd);
+    }
 }

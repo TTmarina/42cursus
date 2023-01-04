@@ -6,12 +6,10 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:02:22 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/27 11:42:36 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/04 17:21:26 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)

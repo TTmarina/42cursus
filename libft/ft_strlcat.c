@@ -6,12 +6,10 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:57:37 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/27 11:44:29 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/04 17:21:15 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)

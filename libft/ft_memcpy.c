@@ -6,12 +6,11 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 17:02:00 by tmarina-          #+#    #+#             */
-/*   Updated: 2022/12/26 21:09:54 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/04 17:20:45 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

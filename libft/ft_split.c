@@ -6,7 +6,7 @@
 /*   By: teresa <teresa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:01:26 by teresa            #+#    #+#             */
-/*   Updated: 2023/01/15 20:02:31 by teresa           ###   ########.fr       */
+/*   Updated: 2023/01/15 20:12:48 by teresa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,10 @@ char **ft_split(char const *s, char c)
     result[k] = (NULL);
     return(result);   
 }
+/*
+int main(int argc, char const *argv[])
+{
+    
+    return 0;
+}
+*/

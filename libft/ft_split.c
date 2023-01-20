@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 16:14:05 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/20 20:04:05 by tmarina-         ###   ########.fr       */
+/*   Created: 2023/01/20 20:09:02 by tmarina-          #+#    #+#             */
+/*   Updated: 2023/01/20 20:09:05 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int len_word(char const *s, char c, int pos)
 {

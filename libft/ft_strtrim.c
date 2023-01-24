@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 09:53:11 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/23 16:34:57 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:03:25 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		return (ft_strdup(""));
 	}
-	if (strlen(set) == 0)
+	if (ft_strlen(set) == 0)
 	{
 		return (ft_strdup(s1));
 	}

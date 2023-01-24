@@ -6,17 +6,17 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 15:02:51 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/23 17:44:50 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:01:49 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
-# include <ctype.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <ctype.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

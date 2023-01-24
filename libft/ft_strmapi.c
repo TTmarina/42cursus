@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 14:45:48 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/23 16:27:55 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:01:22 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*result;
 	size_t	i;
 
-	i = 0;
 	if (!s || !f)
 	{
 		return (NULL);
@@ -27,6 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		return (NULL);
 	}
+	i = 0;
 	while (s[i])
 	{
 	result[i] = f(i, s[i]);

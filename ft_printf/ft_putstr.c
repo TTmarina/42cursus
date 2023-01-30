@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 12:34:34 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/30 17:30:09 by tmarina-         ###   ########.fr       */
+/*   Created: 2023/01/30 15:06:59 by tmarina-          #+#    #+#             */
+/*   Updated: 2023/01/30 17:30:24 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(char const *str, ...)
+int ft_putstr(char *str)
 {
-    va_list args;
-    int result;
-
-    result = 0;
-    va_start(args, str);
-    while (*str)
+    int x;
+    x = 0;
+    
+    if (!str)
+        return (write(1, "(null)", 6));
+    while (str[x] != '\0')
     {
-        if (*str != '%')
-            result += ft_putchar(*str);
-        else
-        {
-            str++;
-           result += ft_choose_conversions(*str, args);   
-        }
-        str++;
+        write(1, &str[x], 1);
+        x++;
     }
-    va_end(args);
-    return (result);
+    return (x);
 }

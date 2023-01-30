@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 12:34:34 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/30 17:30:09 by tmarina-         ###   ########.fr       */
+/*   Created: 2023/01/30 15:03:31 by tmarina-          #+#    #+#             */
+/*   Updated: 2023/01/30 17:30:15 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(char const *str, ...)
+int ft_putchar(char a)
 {
-    va_list args;
-    int result;
-
-    result = 0;
-    va_start(args, str);
-    while (*str)
-    {
-        if (*str != '%')
-            result += ft_putchar(*str);
-        else
-        {
-            str++;
-           result += ft_choose_conversions(*str, args);   
-        }
-        str++;
-    }
-    va_end(args);
-    return (result);
+    write(1, &a, 1);
+    return (1);
 }

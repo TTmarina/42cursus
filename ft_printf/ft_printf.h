@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 12:34:34 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/30 17:30:09 by tmarina-         ###   ########.fr       */
+/*   Created: 2023/01/30 12:49:50 by tmarina-          #+#    #+#             */
+/*   Updated: 2023/01/30 17:30:41 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
 
-int ft_printf(char const *str, ...)
-{
-    va_list args;
-    int result;
+int ft_printf(char const *, ...);
+int ft_putstr(char *str);
+int ft_putnbr(int a);
+int ft_putnbru(unsigned int a);
+int ft_puthexa (size_t a, char format);
+int ft_putchar(char a);
+int ft_choose_conversions(char format, va_list args);
 
-    result = 0;
-    va_start(args, str);
-    while (*str)
-    {
-        if (*str != '%')
-            result += ft_putchar(*str);
-        else
-        {
-            str++;
-           result += ft_choose_conversions(*str, args);   
-        }
-        str++;
-    }
-    va_end(args);
-    return (result);
-}
+#endif

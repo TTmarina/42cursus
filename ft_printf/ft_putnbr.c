@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 12:34:34 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/01/30 17:30:09 by tmarina-         ###   ########.fr       */
+/*   Created: 2023/01/30 15:22:20 by tmarina-          #+#    #+#             */
+/*   Updated: 2023/01/30 17:30:21 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(char const *str, ...)
+int ft_putnbr(int a)
 {
-    va_list args;
-    int result;
+    int i;
+    unsigned int z;
 
-    result = 0;
-    va_start(args, str);
-    while (*str)
+    i = 0;
+    if (a < 0)
     {
-        if (*str != '%')
-            result += ft_putchar(*str);
-        else
-        {
-            str++;
-           result += ft_choose_conversions(*str, args);   
-        }
-        str++;
+        i = ft_putchar('-');
+        z = a * -1;
     }
-    va_end(args);
-    return (result);
+    else
+        z = a;
+    if (z >= 10)
+    {
+        i += ft_putnbr(z / 10);
+    }
+    i += ft_putchar(z % 10 + '0');
+    return (i);
+}
+
+int ft_putnbru(unsigned int a)
+{
+    int i;
+
+    i = 0;
+    if (a >= 10)
+    {
+        i += ft_putnbr(a / 10);
+    }
+    i += ft_putchar(a % 10 + '0');
+    return (i);
 }

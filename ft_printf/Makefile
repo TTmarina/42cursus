@@ -6,7 +6,7 @@
 #    By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 16:14:36 by tmarina-          #+#    #+#              #
-#    Updated: 2023/01/30 17:31:10 by tmarina-         ###   ########.fr        #
+#    Updated: 2023/01/31 17:17:10 by tmarina-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJS			= $(SRCS:.c=.o)
 
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror #-g3 -fsanitize=address
 
 NAME			= libftprintf.a
 

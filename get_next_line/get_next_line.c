@@ -6,55 +6,76 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:17 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/02/21 12:44:17 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:18:15 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_get_next_line(int fd)
+char *get_next_line(int fd)
 {
-	static t_buffer buffer = {NULL, 0};
-	char *line = NULL;
-	int i= 0;
-	int bytes_read = 0;
-	
-	if (buffer.data == NULL || buffer.size == 0)
-	{
-		buffer.data = malloc(BUFFER_SIZE + 1);
-		if (buffer.data == NULL)
-			return (NULL);
-	}
+	static int	buffer_pos;
+	static int	buffer_size;
+	char		*line;
+	int			line_size;
+
+	static buffer[BUFFER_SIZE];
+	buffer_pos = 0;
+	buffer_size = 0;
+	line = NULL;
+	line_size = 0;
 	while (1)
 	{
-		if (i >= buffer.size)
-	 	{
-			bytes_read = ft_read_file(fd, &buffer);
-			if (bytes_read <= 0)
-			break;
-			i = 0;
-		}
-		if (buffer.data[i] == '\n')
+		//Si se ha leído todo el buffer, lo rellenos
+		if (buffer_pos >= buffer_size)
 		{
-			line = malloc(i + 1);
-			if (line == NULL)
-				return (NULL);
-			ft_memcpy(line, buffer.data, i);
-			line[i] = '\0';
-			ft_memmove(buffer.data, buffer.data + i + 1, buffer.size - i);
-			buffer.size -= i + 1;
-			break;
+			buffer_size = read(fd, buffer, BUFFER_SIZE);
+			buffer_pos = 0;
+
+			//Si llegamos al final del archivo o se produce un error, devolver NULL
+			if (buffer_size <= 0)
+			{
+				if (line_size > 0)
+				{
+					return (line);
+				} else {
+					free(line);
+					return (NULL);
+				}
+
+			}
+
 		}
-		i++;
+//Buscamos el siguiente carácter de nueva línea
+char c = buffer[buffer_pos++];
+if (c == '\n'){
+	//Si encontramos el carácter de nueva línea, devolvemos la línea
+	line = realloc(line, line_size + buffer_pos);
+	if(line == NULL){
+		free(line);
+		return NULL;
+		//Copiamos la línea leída en la cadena resultante
+		ft_mencpy(&line[line_size], buffer, buffer_pos);
+		line_size += buffer_pos;
+
+		//Ponemos a cero el buffer_pos para la proxima iteración
+		buffer_pos = 0;
+
+		//Quitamos el carácter de nueva línea
+		line[line_size - 1] = '\0';
+
+		return line;
+	}else{
+		//Si no encontramos el carácter de nueva línea, añadimos el
+		line = realloc(line, line_size + buffer_pos);
+		if(line == NULL){
+			free(line);
+			return NULL;
+		}
+		ft_memcpy(&line[line_size], buffer, buffer_pos);
+		line_size += buffer_pos;
 	}
-	if (bytes_read == 0 && line == NULL)
-	{
-		line = malloc(buffer.size + 1);
-		if (line == NULL)
-			return (NULL);
-		ft_memcpy(line, buffer.data, buffer.size);
-		line[buffer.size] = '\0';
-		buffer.size = 0;
+}
 	}
-	return (line);
+
 }

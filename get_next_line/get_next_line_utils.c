@@ -6,7 +6,7 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:22 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/02/21 12:44:08 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:32:15 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_read_file(int fd, t_buffer *buffer)
 	buffer->data[buffer->size] = '\0';
 	return (buffer->size);
 }
-
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -59,4 +58,32 @@ void	ft_free_resources(char **line, t_buffer *buffer)
 	buffer->size = 0;
 	free(*line);
 	*line = NULL;
+}
+
+int	gnl_strchr(const char *s, int c)
+{
+	int	i;
+
+	if (!s)
+		return (-1);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
 }

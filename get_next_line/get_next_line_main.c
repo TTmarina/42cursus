@@ -6,14 +6,10 @@
 /*   By: tmarina- <tmarina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:52:01 by tmarina-          #+#    #+#             */
-/*   Updated: 2023/02/22 18:32:46 by tmarina-         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:57:11 by tmarina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include "get_next_line.h"
 
 int	main(void)
